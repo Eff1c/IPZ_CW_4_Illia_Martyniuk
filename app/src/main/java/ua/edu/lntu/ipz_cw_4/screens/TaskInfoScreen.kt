@@ -28,7 +28,7 @@ fun TaskInfoScreen(modifier: Modifier = Modifier, navController: NavController, 
     ) {
         Text(task.name, style = TextStyle(fontSize = 62.sp))
         Text(task.description, style = TextStyle(fontSize = 24.sp))
-        Switch(checked = task.isActive, onCheckedChange ={})
+        Switch(checked = task.isActive, onCheckedChange ={navController.popBackStack()})
     }
 }
 

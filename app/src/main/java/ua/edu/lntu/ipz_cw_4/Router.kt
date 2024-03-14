@@ -1,7 +1,8 @@
 package ua.edu.lntu.ipz_cw_4
 
 sealed class Router(val route:String){
-    data object TaskListScreen : Router(route = "task_list_screen")
+    class TaskListScreen(name: String? = null, isActive: Boolean = false):
+        Router(route = "task_list_screen?name=$name&isActive=$isActive")
 
     class TaskInfoScreen(name: String, description: String, isActive: Boolean):
         Router(
